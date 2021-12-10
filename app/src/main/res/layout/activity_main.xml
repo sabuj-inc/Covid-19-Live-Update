@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/status">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp">
+
+                        <ImageView
+                            android:id="@+id/countryFlag"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:scaleType="fitXY" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/countryName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/location"
+                                android:text="Bangladesh"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/lastUpdate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Last Update:Feb 10,2021"
+                                android:textColor="@color/white"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@color/pi_yellow" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="Confirm" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@color/pi_blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="Active" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@color/pi_green" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="Recovered" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <View
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@color/pi_red" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="Dead" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <org.eazegraph.lib.charts.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="10dp"
+                        app:egLegendHeight="0dp"
+                        app:egLegendTextSize="0sp"
+                        app:egUsePieRotation="true"
+                        app:egValueTextSize="0sp" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView style="@style/card_style">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:text="Today Cases"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/todayCases"
+                                style="@style/card_count"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView style="@style/card_style">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:gravity="center"
+                                android:text="Today\nRecovered"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/todayRecovered"
+                                style="@style/card_count"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView style="@style/card_style">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:text="Today Dead"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/todayDead"
+                                style="@style/card_count"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/card_style"
+                        app:cardBackgroundColor="@color/pi_yellow">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:text="Confirm" />
+
+                            <TextView
+                                android:id="@+id/confirm"
+                                style="@style/card_count" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/card_style"
+                        app:cardBackgroundColor="@color/pi_blue">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:text="Active" />
+
+                            <TextView
+                                android:id="@+id/active"
+                                style="@style/card_count" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/card_style"
+                        app:cardBackgroundColor="@color/pi_green">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:text="Recovered" />
+
+                            <TextView
+                                android:id="@+id/recovered"
+                                style="@style/card_count" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/card_style"
+                        app:cardBackgroundColor="@color/pi_red">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:text="Dead" />
+
+                            <TextView
+                                android:id="@+id/dead"
+                                style="@style/card_count" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/card_style"
+                        app:cardBackgroundColor="@color/pi_gray">
+
+                        <LinearLayout style="@style/card_linear">
+
+                            <TextView
+                                style="@style/card_title"
+                                android:text="Tests" />
+
+                            <TextView
+                                android:id="@+id/tests"
+                                style="@style/card_count" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
